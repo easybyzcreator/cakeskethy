@@ -1,0 +1,20 @@
+{
+  "name": "CAKES KETHY",
+  "short_name": "CAKES KETHY",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#725a36",
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/easybyzcreator/imagens/9f6ed6752725671cee6475766827d45d2e7dcceb/patitour%20-%202026-10-30T102834.271.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/easybyzcreator/imagens/9f6ed6752725671cee6475766827d45d2e7dcceb/patitour%20-%202026-10-30T102834.271.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

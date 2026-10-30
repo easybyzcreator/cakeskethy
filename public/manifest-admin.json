@@ -1,0 +1,20 @@
+{
+  "name": "Cakes Kethy Admin",
+  "short_name": "CK Admin",
+  "start_url": "/admin-app",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#725a36",
+  "icons": [
+    {
+      "src": "https://i.ibb.co/wG9J2LT/cake-kethy-admin.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/wG9J2LT/cake-kethy-admin.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

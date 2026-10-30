@@ -1,0 +1,88 @@
+{
+  "entities": {
+    "AppData": {
+      "title": "AppData",
+      "description": "Main application data including settings and categories.",
+      "type": "object",
+      "properties": {
+        "settings": {
+          "type": "object",
+          "description": "App settings like WhatsApp number and admin password."
+        },
+        "categories": {
+          "type": "array",
+          "items": { "type": "object" },
+          "description": "List of product categories."
+        }
+      }
+    },
+    "Product": {
+      "title": "Product",
+      "description": "Individual product details.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "categoryId": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "price": { "type": "number" },
+        "image": { "type": "string" },
+        "active": { "type": "boolean" }
+      }
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Customer order details.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "total": { "type": "number" },
+        "customerName": { "type": "string" },
+        "customerPhone": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "CakeStyle": {
+      "title": "CakeStyle",
+      "description": "Available cake styles for selection.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "imageUrl": { "type": "string" }
+      }
+    },
+    "Customer": {
+      "title": "Customer",
+      "description": "Customer profile information.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "lastOrderDate": { "type": "string", "format": "date-time" }
+      }
+    }
+  },
+  "firestore": {
+    "appData": {
+      "schema": "AppData",
+      "description": "Singleton document for app global data."
+    },
+    "products": {
+      "schema": "Product",
+      "description": "Collection of individual products."
+    },
+    "orders": {
+      "schema": "Order",
+      "description": "Collection of customer orders."
+    },
+    "styles": {
+      "schema": "CakeStyle",
+      "description": "Collection of cake styles."
+    },
+    "customers": {
+      "schema": "Customer",
+      "description": "Collection of customer profiles."
+    }
+  }
+}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CAKES KETHY | Cardápio Digital</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/easybyzcreator/imagens/9f6ed6752725671cee6475766827d45d2e7dcceb/patitour%20-%202026-10-30T102834.271.png" />
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/easybyzcreator/imagens/9f6ed6752725671cee6475766827d45d2e7dcceb/patitour%20-%202026-10-30T102834.271.png" />
+    <meta name="theme-color" content="#725a36" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="CAKES KETHY" />
+    <link rel="manifest" href="/manifest.json" />
+    <script>
+      (function() {
+        const hostname = window.location.hostname.toLowerCase();
+        const pathname = window.location.pathname.toLowerCase();
+        const hash = window.location.hash.toLowerCase();
+        const isAdminDomain = hostname === 'cakeskethyadmin.vercel.app';
+        const isAdminPath = pathname === '/admin-app' || hash.includes('/admin');
+        const isOrderPath = hash.includes('/order/');
+        
+        // Se o usuário entrar pelo link limpo do PWA (/admin-app), 
+        // redirecionamos para a rota real do painel (/#/admin)
+        if (pathname === '/admin-app') {
+          window.location.href = window.location.origin + '/#/admin';
+          return;
+        }
+
+        // Se estivermos no domínio específico do admin ou na rota admin, 
+        // E NÃO for um link de pedido do cliente, forçamos a configuração do PWA do Admin
+        if ((isAdminDomain || isAdminPath) && !isOrderPath) {
+          const manifest = document.querySelector('link[rel="manifest"]');
+          const appleIcon = document.querySelector('link[rel="apple-touch-icon"]');
+          const favicon = document.querySelector('link[rel="icon"]');
+          const appleTitle = document.querySelector('meta[name="apple-mobile-web-app-title"]');
+          
+          if (manifest) manifest.setAttribute('href', '/manifest-admin.json');
+          if (appleIcon) appleIcon.setAttribute('href', 'https://i.ibb.co/wG9J2LT/cake-kethy-admin.png');
+          if (favicon) favicon.setAttribute('href', 'https://i.ibb.co/wG9J2LT/cake-kethy-admin.png');
+          if (appleTitle) appleTitle.setAttribute('content', 'Cakes Kethy Admin');
+          document.title = "Cakes Kethy Admin";
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
